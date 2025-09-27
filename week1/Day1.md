@@ -37,6 +37,7 @@
   * Design has primary inputs/outputs.
   * Testbench does not have primary inputs/outputs; it only drives and checks the DUT.
 
+![Testbench Block Diagram](Images/Day1_Images/testbench.png)
 ---
 
 ## **2. Tools Used**
@@ -44,6 +45,7 @@
 * iverilog → Simulator used to compile and simulate Verilog designs.
 * gtkwave → Waveform viewer used to analyze simulation outputs.
 
+![Testbench Block Diagram](Images/Day1_Images/iverilog_based_simulation_flow.png)
 ---
 
 ## **3. Lab Setup**
@@ -62,6 +64,8 @@
    * my_lib/verilog_model → Verilog models of the standard cells.
    * verilogfiles/ → Contains all Verilog source and testbench files.
 
+![Testbench Block Diagram](Images/Day1_Images/lab1intro_1.png)
+![Testbench Block Diagram](Images/Day1_Images/lab1intro_2.png)
 ---
 
 ## **4. Labs**
@@ -96,6 +100,8 @@ Steps:
    * On the left panel, you can see design, uut (unit under test), and signals.
    * Drag and drop signals to the waveform area.
    * The --> arrows represent transitions in the signals.
+![Testbench Block Diagram](Images/Day1_Images/lab2_1.png)
+![Testbench Block Diagram](Images/Day1_Images/lab2_2.png)
 
 ---
 
@@ -104,6 +110,8 @@ Steps:
 * Open both the design and its corresponding testbench file.
 * Observe:
 
+![Testbench Block Diagram](Images/Day1_Images/lab3_1.png)
+![Testbench Block Diagram](Images/Day1_Images/lab3_2.png)
   * The design has primary inputs and outputs.
   * The testbench generates inputs, connects them to the design, and monitors outputs.
 
