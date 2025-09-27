@@ -37,6 +37,10 @@ Post-integration, system-level verification is performed to check that the integ
 ### 4. Physical Design Flow (RTL → GDSII)
 
 This step translates RTL code into a **layout that can be manufactured**.
+<p align="center">
+  <img src="Images/soc_1.png" width="45%" />
+  <img src="Images/soc_2.png" width="45%" />
+</p>  
 
 Important steps in this flow:
 
