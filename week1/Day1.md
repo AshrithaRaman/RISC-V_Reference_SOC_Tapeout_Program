@@ -211,9 +211,9 @@ To use Yosys for synthesizing a Verilog design, follow these steps:
    ```
    show
    ```
-
-   
-
+![Testbench Block Diagram](Images/Day1_Images/day1_yosys.png)
+![Testbench Block Diagram](Images/Day1_Images/day1_yosys2.png)  
+![Testbench Block Diagram](Images/Day1_Images/day1_yosys3.png)
 > **Note:** For sequential designs containing flip-flops, additional steps are required, which will be covered later.
 
 ---
