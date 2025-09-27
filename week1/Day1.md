@@ -117,4 +117,48 @@ Steps:
 
 ---
 
+### Introduction to Yosys and Standard Cells
+
+**Yosys**:
+Yosys is a synthesizer tool used in this course to convert RTL (Register Transfer Level) designs into a gate-level netlist.
+
+**What is a `.lib` file?**
+A `.lib` file is a collection of logic modules, or “cells,” which includes various types of gates. Each type of gate can have different “flavors,” such as 2-input or 3-input gates, and different speed variants: slow, medium, or fast.
+
+**Why are different flavors of gates needed?**
+The speed of a digital circuit depends on the **combinational delay** along its logic paths. The clock period (`Tclk`) must satisfy the timing equation:
+
+[
+T_{clk} > T_{prop_delay_A} + T_{comb} + T_{setup_B}
+]
+
+Where `Tprop_delay` is the propagation delay of a flip-flop, `Tcomb` is the delay of combinational logic, and `Tsetup_B` is the setup time of the next flip-flop.
+
+The **maximum clock frequency** is given by:
+
+[
+F_{clk(max)} = \frac{1}{T_{clk(min)}}
+]
+
+To achieve the maximum clock frequency, the delays in the circuit should be minimized. Therefore, **fast cells** are used to reduce propagation delay.
+
+**Why do we also need slow cells?**
+Hold time constraints require a minimum delay between launching data from one flip-flop and capturing it in the next. For example, if data is launched from Flip-Flop A at clock edge `t1`, it must be captured by Flip-Flop B at the next rising edge `t2`. Data cannot change immediately after `t1`; it must remain stable for at least the **hold time** (`Thold`) of Flip-Flop B:
+
+[
+T_{clk-to-Q(A)} + T_{comb} > T_{hold(B)}
+]
+
+To meet this requirement and prevent hold violations, **slow cells** are used to intentionally increase delay where needed.
+
+**Fast vs Slow Cells**
+The delay of a digital logic gate is influenced by the load it drives (capacitance). To charge or discharge this capacitance quickly, transistors must source more current, which is achieved by making them **wider**:
+
+* **Wide transistors** → Low delay → Fast cells → Higher area and power consumption
+* **Narrow transistors** → Higher delay → Slow cells → Lower area and power consumption
+
+Hence, fast cells improve performance but incur a cost in area and power. A standard cell library (`.lib`) contains a mixture of slow, medium, and fast cells to balance performance, timing, area, and power.
+
+---
+
 
