@@ -30,7 +30,7 @@ Participants gain experience working with:
 
 | Week | Topics Covered                                             | Status     |
 |------|------------------------------------------------------------|------------|
-| 0    | Introduction to SoC design, Digital VLSI basics, Tool setup | ✅ Completed |
+| [Week0](Week0/)   | Introduction to SoC design, Digital VLSI basics, Tool setup | ✅ Completed |
 
 This repository will be updated every week with logs, scripts, reports, and reflections as I progress through the program.
 
