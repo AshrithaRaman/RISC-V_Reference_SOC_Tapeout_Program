@@ -166,3 +166,57 @@ Hence, fast cells improve performance but incur a cost in area and power. A stan
 ---
 
 
+### How to Invoke Yosys
+
+To use Yosys for synthesizing a Verilog design, follow these steps:
+
+1. **Start Yosys**
+   Open a terminal in the directory containing your Verilog files and type:
+
+   ```
+   yosys
+   ```
+
+2. **Read the Liberty file**
+   Load the standard cell library (`.lib`) using:
+
+   ```
+   read_liberty -lib <path_to_lib_file>
+   ```
+
+3. **Read the Verilog design**
+   Load your Verilog file:
+
+   ```
+   read_verilog good_mux.v
+   ```
+
+4. **Specify the top module**
+   Tell Yosys which module to synthesize (for combinational circuits):
+
+   ```
+   synth -top good_mux
+   ```
+
+5. **Generate the netlist**
+   Perform technology mapping using the ABC tool with the specified library:
+
+   ```
+   abc -liberty <path_to_lib_file>
+   ```
+
+6. **Visualize the realized logic**
+   To see the synthesized circuit:
+
+   ```
+   show
+   ```
+
+   
+
+> **Note:** For sequential designs containing flip-flops, additional steps are required, which will be covered later.
+
+---
+
+
+
