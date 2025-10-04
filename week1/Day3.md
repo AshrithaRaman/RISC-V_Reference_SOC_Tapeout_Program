@@ -47,7 +47,7 @@ If A = 1, then Y = A & B → Y = B
 ### Labs on Combinational Optimization
 
 #### Lab-1: Simple Ternary Optimization
-**File:** [Day 3 Lab1 Verilog File](./Verilog_Files/Day3/opt_check.v)  
+**File:** [opt_check.v](./Verilog_Files/Day3/opt_check.v)  
 - Code: `y = a ? b : 0`  
 - Simplification: `y = a & b`  
 - **Optimized Circuit:** AND gate  
