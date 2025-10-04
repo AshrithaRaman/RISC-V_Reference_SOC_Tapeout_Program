@@ -53,13 +53,13 @@ If A = 1, then Y = A & B → Y = B
 - **Optimized Circuit:** AND gate  
 
 #### Lab-2: Ternary with Constant 1
-**File:** `opt_check2.v`  
+**File:** [opt_check2.v](./Verilog_Files/Day3/opt_check2.v)  
 - Code: `y = a ? 1 : b`  
 - Simplification: `y = a | b`  
 - **Optimized Circuit:** OR gate  
 
 #### Lab-3: Nested Ternary
-**File:** `opt_check3.v`  
+**File:** [opt_check3.v](./Verilog_Files/Day3/opt_check3.v)    
 - Step Simplification:  
 - `c ? b : 0 → c & b`  
 - `a ? (c & b) : 0 → a & c & b`  
@@ -67,7 +67,7 @@ If A = 1, then Y = A & B → Y = B
 - **Optimized Circuit:** 3-input AND gate  
 
 #### Lab-4: Multi-Level Ternary with Inversion
-**File:** `opt_check4.v`  
+**File:** [opt_check4.v](./Verilog_Files/Day3/opt_check4.v)   
 - Original: `y = a ? (b ? (a & c) : c) : !c`  
 - Simplification:  
 - Inner reduces to `c`  
@@ -96,7 +96,7 @@ Sequential optimizations improve efficiency of registers, FSMs, and clocking.
 ### Labs on Sequential Optimization
 
 #### Lab-1: Flip-Flop Driving Constant Value
-**File:** `dff_const.v`  
+**File:** [dff_const1.v](./Verilog_Files/Day3/dff_const1.v)    
 - Behavior:  
 - On reset → q = 0  
 - After reset → q = 1 forever  
@@ -105,7 +105,7 @@ Sequential optimizations improve efficiency of registers, FSMs, and clocking.
 - **Tool ties `q` directly to VCC.**  
 
 #### Lab-2: Flip-Flop Always Constant 1
-**File:** `dff_const1.v`  
+**File:** [dff_const2.v](./Verilog_Files/Day3/dff_const2.v)    
 - Behavior: q = 1 at all times (even during reset).  
 - Optimization:  
 - Flip-flop completely removed.  
@@ -116,14 +116,14 @@ Sequential optimizations improve efficiency of registers, FSMs, and clocking.
 ## 4. Sequential Optimizations for Unused Outputs
 
 ### Lab-1: Counter with Only LSB Used
-**File:** `counter_opt.v`  
+**File:** [counter_opt.v](./Verilog_Files/Day3/counter_opt.v)    
 - 3-bit counter increments each clock cycle.  
 - Only `count[0]` is used as output `q`.  
 - **Optimization:** Higher bits (`count[1], count[2]`) are removed.  
 - **Final Hardware:** A single toggle flip-flop remains.  
 
 ### Lab-2: Counter Compared to Constant
-**File:** `counter_opt2.v`  
+**File:** [counter_opt2.v](./Verilog_Files/Day3/counter_opt2.v)    
 - 3-bit counter with output `q = (count == 3'b100)`.  
 - All bits are required for the comparison.  
 - **Optimization:** Counter remains 3 bits, but comparator is minimized.  
